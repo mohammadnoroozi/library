@@ -10,6 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@tinymce/tinymce-react": "^4.3.0",
+    "ace-builds": "^1.23.4",
+    "bootstrap": "^5.3.1",
+    "bootstrap-icons": "^1.10.5",
+
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "react": "^18.2.0",
