@@ -1,0 +1,440 @@
+@font-face {
+  font-family: sahel;
+  font-display: swap;
+  src: url("/fonts/sahel-fd.woff2") format("woff2"),
+    url("/fonts/sahel-fd.woff") format("woff");
+}
+
+@font-face {
+  font-family: vazir;
+  font-display: swap;
+  src: url("/fonts/vazir-fd.woff2") format("woff2"),
+    url("/fonts/vazir-fd.woff") format("woff");
+}
+
+html,
+body {
+  font-family: "vazir", serif;
+  font-size: 0.95rem;
+  line-height: 1.9;
+  @media screen and (max-width: $grid-breakpoint-md) {
+    font-size: 0.9rem;
+  }
+}
+
+h1 {
+  font-size: 18px;
+}
+h2 {
+  font-size: 16px;
+}
+h3 {
+  font-size: 14px;
+}
+h4 {
+  font-size: 12px;
+}
+h5 {
+  font-size: 11px;
+}
+h6 {
+  font-size: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  height: auto;
+  color: transparent;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.body {
+  min-height: 82vh;
+}
+
+.btn,
+.dropdown-menu {
+  font-size: inherit;
+}
+
+img {
+  color: transparent;
+  max-width: 100%;
+  &.lazyload:not([src]) {
+    visibility: hidden;
+  }
+  &.lazyload,
+  &.lazyloading {
+    opacity: 0;
+  }
+  &.lazyloaded {
+    opacity: 1;
+    transition: opacity 100ms;
+  }
+}
+
+.ltr {
+  /* rtl:ignore */
+  direction: ltr;
+}
+
+.en {
+  /* rtl:ignore */
+  direction: ltr;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.en-mono {
+  /* rtl:ignore */
+  direction: ltr;
+  font-family: monospace;
+}
+
+.centered-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  @include fill(fixed);
+}
+
+.hover-shadow {
+  &:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  }
+  @media screen and (max-width: $grid-breakpoint-md) {
+    box-shadow: 0 0.5px 0.8vw rgba(138, 138, 138, 0.45),
+      inset 0 0.5px 0.5px rgba(135, 135, 135, 0.25);
+    border: 1px dashed #eee;
+  }
+}
+
+.btn-transparent,
+.btn-transparent:focus,
+.btn-transparent.focus,
+.btn-transparent:active,
+.btn-transparent.active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+@mixin not-selectable() {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                      supported by Chrome, Edge, Opera and Firefox */
+}
+
+$avatar-sizes: 15, 20, 25, 30, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275,
+  300;
+@each $size in $avatar-sizes {
+  .avatar-#{$size} {
+    @include base-avatar($size);
+  }
+  .avatar-sm-#{$size} {
+    @media screen and (min-width: $grid-breakpoint-sm) {
+      @include base-avatar($size);
+    }
+  }
+  .avatar-md-#{$size} {
+    @media screen and (min-width: $grid-breakpoint-md) {
+      @include base-avatar($size);
+    }
+  }
+  .avatar-lg-#{$size} {
+    @media screen and (min-width: $grid-breakpoint-lg) {
+      @include base-avatar($size);
+    }
+  }
+  .avatar-xl-#{$size} {
+    @media screen and (min-width: $grid-breakpoint-xl) {
+      @include base-avatar($size);
+    }
+  }
+  .avatar-xxl-#{$size} {
+    @media screen and (min-width: $grid-breakpoint-xxl) {
+      @include base-avatar($size);
+    }
+  }
+  .wf-#{$size} {
+    @include base-wf($size);
+  }
+  .wf-sm-#{$size} {
+    @media screen and (min-width: $grid-breakpoint-sm) {
+      @include base-wf($size);
+    }
+  }
+  .wf-md-#{$size} {
+    @media screen and (min-width: $grid-breakpoint-md) {
+      @include base-wf($size);
+    }
+  }
+  .wf-lg-#{$size} {
+    @media screen and (min-width: $grid-breakpoint-lg) {
+      @include base-wf($size);
+    }
+  }
+  .wf-xl-#{$size} {
+    @media screen and (min-width: $grid-breakpoint-xl) {
+      @include base-wf($size);
+    }
+  }
+  .wf-xxl-#{$size} {
+    @media screen and (min-width: $grid-breakpoint-xxl) {
+      @include base-wf($size);
+    }
+  }
+
+  .hf-#{$size} {
+    @include base-hf($size);
+  }
+  .hf-sm-#{$size} {
+    @media screen and (min-width: $grid-breakpoint-sm) {
+      @include base-hf($size);
+    }
+  }
+  .hf-md-#{$size} {
+    @media screen and (min-width: $grid-breakpoint-md) {
+      @include base-hf($size);
+    }
+  }
+  .whf-lg-#{$size} {
+    @media screen and (min-width: $grid-breakpoint-lg) {
+      @include base-hf($size);
+    }
+  }
+  .hf-xl-#{$size} {
+    @media screen and (min-width: $grid-breakpoint-xl) {
+      @include base-hf($size);
+    }
+  }
+  .hf-xxl-#{$size} {
+    @media screen and (min-width: $grid-breakpoint-xxl) {
+      @include base-hf($size);
+    }
+  }
+}
+
+$font-sizes: 48, 24, 22, 20, 18, 16, 14, 12, 10, 8;
+@each $size in $font-sizes {
+  .fs-#{$size} {
+    font-size: #{$size}px;
+  }
+  .fs-sm-#{$size} {
+    @media screen and (min-width: $grid-breakpoint-sm) {
+      font-size: #{$size}px !important;
+    }
+  }
+  .fs-md-#{$size} {
+    @media screen and (min-width: $grid-breakpoint-md) {
+      font-size: #{$size}px !important;
+    }
+  }
+  .fs-lg-#{$size} {
+    @media screen and (min-width: $grid-breakpoint-lg) {
+      font-size: #{$size}px !important;
+    }
+  }
+  .fs-xl-#{$size} {
+    @media screen and (min-width: $grid-breakpoint-xl) {
+      font-size: #{$size}px !important;
+    }
+  }
+  .fs-xxl-#{$size} {
+    @media screen and (min-width: $grid-breakpoint-xxl) {
+      font-size: #{$size}px !important;
+    }
+  }
+}
+
+.fs-xs {
+  font-size: 80%;
+}
+.fs-s {
+  font-size: 90%;
+}
+.fs-n {
+  font-size: 100%;
+}
+.fs-l {
+  font-size: 110%;
+}
+.fs-xl {
+  font-size: 120%;
+}
+
+.ajax-button {
+  display: inline-flex;
+  align-items: center;
+  .ajax-spinner {
+    display: none;
+  }
+  &.loading .no-ajax-content {
+    display: none;
+  }
+  &.loading .ajax-spinner {
+    display: inline-block;
+  }
+}
+
+.color-picker {
+  position: relative;
+  vertical-align: text-bottom;
+  margin: 0 10px;
+  .react-colorful__saturation {
+    border-radius: 0;
+  }
+  .holder {
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    display: inline;
+    border: 1px solid $gray-400;
+    border-radius: 8px;
+    padding: 1px;
+    z-index: 2;
+  }
+  .cancel {
+    border-radius: 0 8px 0 0;
+  }
+  .save {
+    border-radius: 8px 0 0 0;
+    width: 100%;
+  }
+  input {
+    text-align: center;
+    /* rtl:ignore */
+    direction: ltr;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    width: 100px;
+    border-left-color: $white;
+  }
+  .handle {
+    border: 1px solid $gray-400;
+    border-radius: 4px;
+    width: 40px;
+  }
+  .page-blocker {
+    @include fill(fixed);
+    z-index: 1;
+  }
+  .input-group-text {
+    background-color: $white;
+    border-right-color: $white;
+  }
+}
+
+.form-box {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &.editable {
+    .items-container {
+      padding: 0px 35px 0px 15px;
+    }
+  }
+  &.selected {
+    .select-container,
+    .save-container,
+    .items-container {
+      border-color: $green !important;
+    }
+  }
+  &.new {
+    .save-container,
+    .items-container {
+      background-color: $gray-200;
+      margin-top: 25px;
+    }
+  }
+  .items-container {
+    border: 1px solid $gray-400;
+    border-radius: 10px;
+    padding: 10px;
+    flex: 1;
+  }
+  .select-container,
+  .save-container {
+    border: 1px solid $gray-400;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+  .select-container {
+    margin-bottom: -25px;
+    margin-left: -25px;
+  }
+  .save-container {
+    margin-left: -25px;
+  }
+}
+
+.field-loading {
+  position: absolute;
+  /* rtl:ignore */
+  direction: ltr;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8px;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
+  animation: field-loading-colors 1s ease-in 0s infinite normal;
+}
+@keyframes field-loading-colors {
+  0% {
+    color: $black;
+  }
+
+  25% {
+    color: $purple;
+  }
+
+  50% {
+    color: $yellow;
+  }
+
+  75% {
+    color: $red;
+  }
+}
+
+.undefined {
+  color: red !important;
+  background-color: red !important;
+  border-color: red !important;
+}
+
+.hover-parent {
+  position: relative;
+  .hover-visible {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    transition: all 0.2s ease;
+  }
+  &.selected,
+  &:hover {
+    .hover-visible {
+      opacity: 1;
+      top: 110%;
+    }
+  }
+}
+
+.image-thumbnail {
+  max-width: 100px;
+  max-height: 100px;
+}

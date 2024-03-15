@@ -1,0 +1,24 @@
+@mixin base-avatar($size) {
+  width: #{$size}px;
+  height: #{$size}px;
+  overflow: hidden;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin base-wf($size) {
+  width: #{$size}px;
+}
+
+@mixin base-hf($size) {
+  height: #{$size}px !important;
+}
+
+@mixin fill($position) {
+  position: $position;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

@@ -1,0 +1,91 @@
+@mixin modal-fullscreen-base() {
+  padding: 0 !important;
+  .modal-dialog {
+    width: 100%;
+    max-width: none;
+    height: 100% !important;
+    margin: 0 !important;
+  }
+
+  .modal-content {
+    height: 100%;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .modal-body {
+    overflow-y: auto;
+  }
+}
+@mixin modal-fullheight-base() {
+  .modal-dialog {
+    height: calc(100% - 2rem);
+    margin: 1rem auto;
+  }
+
+  .modal-content {
+    height: 100%;
+  }
+
+  .modal-body {
+    overflow-y: auto;
+  }
+}
+
+.modal-fullscreen {
+  @include modal-fullscreen-base();
+}
+.modal-fullscreen-sm {
+  @media screen and (max-width: $grid-breakpoint-sm) {
+    @include modal-fullscreen-base();
+  }
+}
+.modal-fullscreen-md {
+  @media screen and (max-width: $grid-breakpoint-md) {
+    @include modal-fullscreen-base();
+  }
+}
+.modal-fullscreen-lg {
+  @media screen and (max-width: $grid-breakpoint-lg) {
+    @include modal-fullscreen-base();
+  }
+}
+.modal-fullscreen-xl {
+  @media screen and (max-width: $grid-breakpoint-xl) {
+    @include modal-fullscreen-base();
+  }
+}
+.modal-fullscreen-xxl {
+  @media screen and (max-width: $grid-breakpoint-xxl) {
+    @include modal-fullscreen-base();
+  }
+}
+
+.modal-fullheight {
+  @include modal-fullheight-base();
+}
+.modal-fullheight-sm {
+  @media screen and (max-width: $grid-breakpoint-sm) {
+    @include modal-fullheight-base();
+  }
+}
+.modal-fullheight-md {
+  @media screen and (max-width: $grid-breakpoint-md) {
+    @include modal-fullheight-base();
+  }
+}
+.modal-fullheight-lg {
+  @media screen and (max-width: $grid-breakpoint-lg) {
+    @include modal-fullheight-base();
+  }
+}
+.modal-fullheight-xl {
+  @media screen and (max-width: $grid-breakpoint-xl) {
+    @include modal-fullheight-base();
+  }
+}
+.modal-fullheight-xxl {
+  @media screen and (max-width: $grid-breakpoint-xxl) {
+    @include modal-fullheight-base();
+  }
+}

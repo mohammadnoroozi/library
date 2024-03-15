@@ -1,0 +1,20 @@
+.publish-status {
+  letter-spacing: 2px;
+  margin-left: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  direction: ltr;
+  text-transform: uppercase;
+  font-size: x-small;
+  &.waiting {
+    color: $orange
+  }
+  &.draft {
+    color: $gray
+  }
+  &.published {
+    color: $green
+  }
+  &.rejected {
+    color: $red
+  }
+}

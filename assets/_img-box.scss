@@ -1,0 +1,67 @@
+.img-box {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:after {
+    content: "";
+    display: block;
+  }
+  img,
+  picture {
+    position: absolute !important;
+    display: flex;
+    min-width: 100%;
+    min-height: 100%;
+  }
+}
+
+.img-box-dynamic {
+  &:after {
+    padding-bottom: var(--dynamic-ratio);
+  }
+}
+
+@each $i in $img-boxes {
+  .img-box-#{nth($i,1)}-#{nth($i,2)} {
+    &:after {
+      padding-bottom: (nth($i, 1) / nth($i, 2) * 100) + 0%;
+    }
+  }
+  .img-box-sm-#{nth($i,1)}-#{nth($i,2)} {
+    @media screen and (min-width: $grid-breakpoint-sm) {
+      &:after {
+        padding-bottom: (nth($i, 1) / nth($i, 2) * 100) + 0%;
+      }
+    }
+  }
+  .img-box-md-#{nth($i,1)}-#{nth($i,2)} {
+    @media screen and (min-width: $grid-breakpoint-md) {
+      &:after {
+        padding-bottom: (nth($i, 1) / nth($i, 2) * 100) + 0%;
+      }
+    }
+  }
+  .img-box-lg-#{nth($i,1)}-#{nth($i,2)} {
+    @media screen and (min-width: $grid-breakpoint-lg) {
+      &:after {
+        padding-bottom: (nth($i, 1) / nth($i, 2) * 100) + 0%;
+      }
+    }
+  }
+  .img-box-xl-#{nth($i,1)}-#{nth($i,2)} {
+    @media screen and (min-width: $grid-breakpoint-xl) {
+      &:after {
+        padding-bottom: (nth($i, 1) / nth($i, 2) * 100) + 0%;
+      }
+    }
+  }
+  .img-box-xxl-#{nth($i,1)}-#{nth($i,2)} {
+    @media screen and (min-width: $grid-breakpoint-xxl) {
+      &:after {
+        padding-bottom: (nth($i, 1) / nth($i, 2) * 100) + 0%;
+      }
+    }
+  }
+}
